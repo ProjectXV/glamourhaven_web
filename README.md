@@ -9,7 +9,7 @@ A web application that aims at making booking of appointments to salons easier.
 | `NodeJs` | ..... |
 | `Chakra UI` | ..... |
 | `Redux` | ..... |
-| `Redux` | ..... |
+| `Vite` | v2.6.8 |
 
 ### Backend Technologies
 | Technology | Details |
