@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "google"],
+  "extends": ["plugin:react/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,6 +13,7 @@
   },
   "plugins": ["react"],
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "react/prop-types": 0
   }
 }
