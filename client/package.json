@@ -1,0 +1,41 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A website that makes booking of salon appointmnets easy",
+  "main": "./src/main.js",
+  "repository": "https://github.com/ProjectXV/glamourhaven_web",
+  "author": "Juliana Sau",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.5",
+    "prettier": "2.5.1",
+    "vite": "^2.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{html,css,less,ejs}": [
+      "prettier --write --ignore-unknown"
+  ]
+  }
+}
+
