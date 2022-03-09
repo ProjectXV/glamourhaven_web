@@ -3,7 +3,7 @@ import image from '../assets/Landingpage.jpg';
 import React from 'react';
 import Header from '../components/PageSections/Header';
 import ServicesCard from '../components/Cards/ServicesCard';
-import { ServicesList } from '../lib/data/ServicesData';
+import { ServicesList } from '../data/ServicesData';
 import Footer from '../components/PageSections/Footer';
 import { useNavigate } from 'react-router-dom';
 
