@@ -64,8 +64,7 @@ A web application that aims at making booking of appointments to salons easier.
   ```
 
  - Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
- - You're all set😌
- - Happy coding😁
+ - You're all set. Happy coding😁
 
 ### **Building**
 
