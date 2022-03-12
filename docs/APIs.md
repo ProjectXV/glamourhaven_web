@@ -46,6 +46,28 @@ Content-Type: `application/json`
     
 Authorization: `Token ${token}`
 
+## Sample request
+
+How to update add an employee
+
+### Request Body Params
+
+```bash
+{
+    "user": {
+        "email": "string",
+        "username": "string",
+        "password": "string"
+    },
+    "first_name": "string",
+    "last_name": "string",
+    "phone_number": "number",
+    "national_id": "number",
+    "profile_picture": "string",
+    "specialization": "string"
+}
+```
+
 ## 2. GET /employees
 
 This endpoint allows you to list all current employees.
@@ -68,20 +90,33 @@ Request Type: `GET`
 
 Endpoint: `{baseUrl}/employees/{employee_id}`
 
+### Path Parameters
+
+Params| Description | Required
+---------|----------|---------
+ employee_id | string | yes
+
 ### Request Headers
     
 Content-Type: `application/json`
     
 Authorization: `Token ${token}`
 
-## 4. PUT/PATCH /employees/{employee_id}
+
+## 4. PATCH /employees/{employee_id}
 
 This endpoint allows you to update employee profile.
 **must be logged in as the employee who owns the account**
 
-Request Type: `PUT/PATCH`
+Request Type: `PATCH`
 
 Endpoint: `{baseUrl}/employees/{employee_id}/update-profile/`
+
+### Path Parameters
+
+Params| Description | Required
+---------|----------|---------
+ employee_id | string | yes
 
 ### Request Headers
     
@@ -89,15 +124,37 @@ Content-Type: `application/json`
     
 Authorization: `Token ${token}`  
 
+## Sample request
 
-## 5. PUT/PATCH /employees/{employee_id}
+How to update employee profile
+
+### Request Body Params
+
+```bash
+{
+    "user": {
+        "email": "string",
+    },
+    "phone_number": "number",
+    "profile_picture": "string",
+}
+```
+
+
+## 5. PUT/PATCH/DELETE /employees/{employee_id}/manage-employee
 
 This endpoint allows you to manage employee accounts.
 **must be logged in as admin i.e an account with a staff status**
 
-Request Type: `PUT/PATCH`
+Request Type: `PUT/PATCH/DELETE`
 
 Endpoint: `{baseUrl}/employees/{employee_id}/manage-employee/`
+
+### Path Parameters
+
+Params| Description | Required
+---------|----------|---------
+ employee_id | string | yes
 
 ### Request Headers
     
@@ -105,6 +162,23 @@ Content-Type: `application/json`
     
 Authorization: `Token ${token}` 
 
+## Sample request
+
+How to manage an employee
+
+### Request Body Params
+
+```bash
+{
+    "id": "number",
+    "profile_picture": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "phone_number": "string",
+    "national_id": "string",
+    "specialization": "string"
+}
+```
 
 ## 6. POST /signup
 
@@ -117,6 +191,25 @@ Endpoint: `{baseUrl}/signup`
 ### Request Headers
     
 Content-Type: `application/json`
+
+## Sample request
+
+How to manage an employee
+
+### Request Body Params
+
+```bash
+{
+    "user": {
+      "email": "string",
+      "username": "string",
+      "password": "string"
+    },
+    "phone_number": "string",
+    "is_subscribed": "boolean",
+    "specialization": "string"
+}
+```
 
 
 ## 7. GET /clients
@@ -142,6 +235,12 @@ Request Type: `GET`
 
 Endpoint: `{baseUrl}/clients/{client_id}`
 
+### Path Parameters
+
+Params| Description | Required
+---------|----------|---------
+ client_id | string | yes
+
 ### Request Headers
     
 Content-Type: `application/json`
@@ -158,11 +257,34 @@ Request Type: `PUT/PATCH`
 
 Endpoint: `{baseUrl}/client/{client_id}/update-profile`
 
+### Path Parameters
+
+Params| Description | Required
+---------|----------|---------
+ client_id | string | yes
+
 ### Request Headers
     
 Content-Type: `application/json`
     
 Authorization: `Token ${token}`
+
+## Sample request
+
+How to manage an employee
+
+### Request Body Params
+
+```bash
+{
+    "user": {
+        "username": "string",
+        "email": "string"
+    },
+    "phone_number": "string",
+    "is_subscribed": "boolean"
+}
+```
 
 
 ## 10. POST /activate-account/{uid}/{token}/
@@ -174,9 +296,29 @@ Request Type: `POST`
 
 Endpoint: `{baseUrl}/activate-account/{uid}/{token}/`
 
+### Path Parameters
+
+Params| Description | Required
+---------|----------|---------
+ uid | string | yes
+ token | string | yes
+
 ### Request Headers
     
 Content-Type: `application/json`
+
+## Sample request
+
+How to manage an employee
+
+### Request Body Params
+
+```bash
+{
+    "uid": "string",
+    "token": "boolean"
+}
+```
  
  
 ## 11. POST /add-commodity/
@@ -194,12 +336,32 @@ Content-Type: `application/json`
     
 Authorization: `Token ${token}`
 
+## Sample request
 
-## 12. POST /products/
+How to manage an employee
+
+### Request Body Params
+
+```bash
+{
+    "commodity_name": "string",
+    "category": "string",
+    "description": "string",
+    "price": "number",
+    "pricing_unit": "number",
+    "number_in_stock": "number",
+    "commodity_main_image": "string",
+    "commodity_extra_image1": "string",
+    "commodity_extra_image2": "string"
+}
+```
+
+
+## 12.GET /products/
 
 This endpoint allows you to list all sale products in stock.
 
-Request Type: `POST`
+Request Type: `GET`
 
 Endpoint: `{baseUrl}/products/`
 
@@ -219,6 +381,10 @@ Request Type: `GET`
 
 Endpoint: `{baseUrl}/products/{product_id}/`
 
+Params| Description | Required
+---------|----------|---------
+ product_id | string | yes
+
 ### Request Headers
     
 Content-Type: `application/json`
@@ -234,6 +400,10 @@ This endpoint allows you to update sale products.
 Request Type: `PUT/PATCH`
 
 Endpoint: `{baseUrl}/commodity/{commodity_id}/update-commodity/`
+
+Params| Description | Required
+---------|----------|---------
+ commodity_id | string | yes
 
 ### Request Headers
     
@@ -282,6 +452,10 @@ Request Type: `GET`
 
 Endpoint: `{baseUrl}/services/{service_id}/`
 
+Params| Description | Required
+---------|----------|---------
+ service_id | string | yes
+
 ### Request Headers
     
 Content-Type: `application/json`
@@ -297,6 +471,10 @@ This endpoint allows you to update a service.
 Request Type: `PUT/PATCH`
 
 Endpoint: `{baseUrl}/services/{service_id}/update-service/`
+
+Params| Description | Required
+---------|----------|---------
+ service_id | string | yes
 
 ### Request Headers
     
@@ -346,6 +524,10 @@ Request Type: `GET`
 
 Endpoint: `{baseUrl}/appointments/{appointment_id}`
 
+Params| Description | Required
+---------|----------|---------
+ appointment_id | string | yes
+
 ### Request Headers
     
 Content-Type: `application/json`
@@ -361,6 +543,10 @@ This endpoint allows you to update a specific appointment.
 Request Type: `PUT/PATCH`
 
 Endpoint: `{baseUrl}/appointments/{appointment_id}`
+
+Params| Description | Required
+---------|----------|---------
+ appointment_id | string | yes
 
 ### Request Headers
     
@@ -454,6 +640,10 @@ Request Type: `GET`
 
 Endpoint: `{baseUrl}/lnmorders/{order_id}/`
 
+Params| Description | Required
+---------|----------|---------
+ order_id | string | yes
+
 ### Request Headers
     
 Content-Type: `application/json`
@@ -461,7 +651,7 @@ Content-Type: `application/json`
 Authorization: `Token ${token}`
 
 
-## 29. GET /client-lnmorders/{order_id}/
+## 29. GET /client-lnmorders/{client_id}/
 
 This endpoint allows you to view all of a specific client's orders.
 **must be logged in as admin or the client who placed the orders**
@@ -469,6 +659,10 @@ This endpoint allows you to view all of a specific client's orders.
 Request Type: `GET`
 
 Endpoint: `{baseUrl}/client-lnmorders/{client_id}/`
+
+Params| Description | Required
+---------|----------|---------
+ client_id | string | yes
 
 ### Request Headers
     
@@ -485,6 +679,10 @@ This endpoint allows you to view all of a specific client's appointments.
 Request Type: `GET`
 
 Endpoint: `{baseUrl}/client-appointments/{client_id}/`
+
+Params| Description | Required
+---------|----------|---------
+ client_id | string | yes
 
 ### Request Headers
     
