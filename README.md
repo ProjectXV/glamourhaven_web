@@ -15,8 +15,8 @@ A web application that aims at making booking of appointments to salons easier.
 ## Backend Technologies
 | Technology | Version | Use |
 | -------- | ----------- | ---------- |
-| `Django` | v4.0 | Backend Framework |
-| `Python` | v3.9 | Programing Language |
+| `Django` | v4.3 | Backend Framework |
+| `Python` | v3.10 | Programing Language |
 | `DJANGO REST FRAMEWORK` | ... | Framework for building APIs |
 
 # Contributing to The Project
