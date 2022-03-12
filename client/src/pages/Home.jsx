@@ -45,7 +45,7 @@ const Home = () => {
             bg="brand.300"
             borderRadius="3px"
             color="white"
-            onClick={() => navigate('/login')}
+            onClick={() => navigate('/account/login')}
           >
             Book An Appointment
           </Button>

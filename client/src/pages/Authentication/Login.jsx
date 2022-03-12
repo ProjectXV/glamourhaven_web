@@ -45,7 +45,7 @@ const Login = () => {
           <Button
             color="#555555"
             variant="link"
-            onClick={() => navigate(`/client/signup`)}
+            onClick={() => navigate(`/account/signup`)}
           >
             <Text>Don't have an account? </Text>
             <Text ml="0.3vw" color="brand.300" fontWeight="500">
@@ -125,6 +125,23 @@ const Login = () => {
               //   onClick={handleSubmit}
             >
               Log into your account
+            </Button>
+            <Button
+              mt="2vh"
+              mb="2vh"
+              // type="submit"
+              width="100%"
+              //   isDisabled={!user.password || !user.username}
+              //   bg={!user.password || !user.username ? 'brand.200' : 'brand.300'}
+              //   color={
+              //     !user.password || !user.username ? 'brand.300' : 'brand.200'
+              //   }
+              _focus={{ outline: 'none' }}
+              _active={{ outline: 'none' }}
+              //   isLoading={loading}
+              //   onClick={handleSubmit}
+            >
+              Log in as Admin
             </Button>
             <HStack>
               <Divider />

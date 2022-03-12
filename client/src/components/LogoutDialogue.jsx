@@ -42,7 +42,7 @@ export const LogoutDialogue = props => {
               onClick={() => {
                 localStorage.removeItem('userInfo');
                 // logOut(dispatch);
-                navigate('/login');
+                navigate('/account/login');
               }}
               ml={3}
             >
