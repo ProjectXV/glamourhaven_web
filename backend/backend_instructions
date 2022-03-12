@@ -11,9 +11,7 @@
       $ . venv/scripts/activate (for Windows OS)
 
     create a .env file in the settings folder and add:
-    SECRET_KEY=django-insecure-v6u@b_hd32ts2xon5=+y(r(z!ufyfh7np90c@d(b-g8e9uzkzf
-    EMAIL_HOST_USER = 'glamourhavens@gmail.com'
-    EMAIL_HOST_PASSWORD = 'wwvkuzchurxcbusf'
+    #details removed for security reasons
     
     then save
 
