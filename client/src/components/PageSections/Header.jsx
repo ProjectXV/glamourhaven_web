@@ -73,7 +73,7 @@ const Header = () => {
             <UserBadge userDetails={userDetails} />
           ) : (
             <Button
-              onClick={() => navigate('/login')}
+              onClick={() => navigate('/account/login')}
               variant="ghost"
               {...buttonStyles}
               _hover={{ bg: 'brand.300', color: 'white' }}
@@ -106,13 +106,17 @@ const Header = () => {
             <MenuDivider />
             {!userDetails?.token ? (
               <>
-                <MenuItem onClick={() => navigate('/login')}>Login</MenuItem>
-                <MenuItem onClick={() => navigate('/client/signup')}>
+                <MenuItem onClick={() => navigate('/account/login')}>
+                  Login
+                </MenuItem>
+                <MenuItem onClick={() => navigate('/account/signup')}>
                   SignUp
                 </MenuItem>
               </>
             ) : (
-              <MenuItem onClick={() => navigate('/login')}>Logout</MenuItem>
+              <MenuItem onClick={() => navigate('/account/login')}>
+                Logout
+              </MenuItem>
             )}
           </MenuList>
         </Menu>
