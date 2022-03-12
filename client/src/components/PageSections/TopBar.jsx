@@ -19,23 +19,20 @@ import React, { useState } from 'react';
 import { MdNotifications } from 'react-icons/md';
 import { FiSearch } from 'react-icons/fi';
 import CartIcon from '../Cart/CartIcon';
-import { CartState } from '../../context/cart';
-import Cart from '../../pages/Products/Cart';
+// import Cart from '../../pages/Products/Cart';
 import { useDisclosure } from '@chakra-ui/react';
 import notifications from '../../data/notifications.json';
 import { useOutsideClick } from '@chakra-ui/react';
-import { useAuthState } from '../../context';
 import UserBadge from '../UserBadge';
 import NotificationItem from '../NotificationItem';
 
 const TopBar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const { cartItems } = CartState();
-  const CartQuantity = cartItems.reduce(
-    (cartTotalQuantity, item) => cartTotalQuantity + item.quantity,
-    0,
-  );
+  // const CartQuantity = cartItems.reduce(
+  //   (cartTotalQuantity, item) => cartTotalQuantity + item.quantity,
+  //   0,
+  // );
   const [show, setShow] = useState(false);
   const ref = React.useRef();
 
@@ -44,11 +41,13 @@ const TopBar = () => {
     handler: () => setShow(false),
   });
 
-  const { userDetails, isAuthenticated } = useAuthState();
+  // function emailUsername(emailAddress) {
+  //   return emailAddress.match(/^(.+)@/)[1];
+  // }
 
-  function emailUsername(emailAddress) {
-    return emailAddress.match(/^(.+)@/)[1];
-  }
+  const userDetails = localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
+    : null;
 
   return (
     <>
@@ -57,7 +56,7 @@ const TopBar = () => {
           <HStack>
             <Text fontSize="1.5em">Welcome Back, </Text>
             <Text fontWeight="bold" fontSize="1.5em" color="brand.300">
-              {emailUsername(`${userDetails?.email}`)}
+              {/* {emailUsername(`${userDetails?.email}`)} */} admin
             </Text>
           </HStack>
           <Text fontSize="0.7em">
@@ -88,7 +87,7 @@ const TopBar = () => {
             />
           )}
           <CartIcon
-            number={CartQuantity}
+            number={3}
             color={'black'}
             handleOpenCart={() => onOpen()}
           />
@@ -120,12 +119,10 @@ const TopBar = () => {
           </Popover>
         </HStack>
         <HStack>
-          {isAuthenticated && userDetails.token ? (
-            <UserBadge userDetails={userDetails} />
-          ) : null}
+          {userDetails.token ? <UserBadge userDetails={userDetails} /> : null}
         </HStack>
       </Flex>
-      <Cart isOpen={isOpen} onClose={onClose} />
+      {/* <Cart isOpen={isOpen} onClose={onClose} /> */}
     </>
   );
 };
