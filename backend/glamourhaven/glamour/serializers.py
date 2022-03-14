@@ -51,6 +51,7 @@ class UserSerializer(UserCreateSerializer):
         sends account activation link to their email address"""
 
         request = self.context.get("request")
+
         try:
             # roll back user create if account activation email isn't sent successfully
             with transaction.atomic():
@@ -72,9 +73,9 @@ class UserSerializer(UserCreateSerializer):
                         raise CustomException(
                             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                             code=500,
-                            detail=("Sorry, something went wrong. we are unable to complete your request."
-                                    " Please contact support for more information"),
-                            data={"error": "server error"})
+                            detail={"error": [("Sorry, something went wrong. we are unable to complete your request."
+                                    " Please contact support for more information")]},
+                        )
         except Exception as e:
             raise e
         return user
@@ -86,3 +87,11 @@ class UserSerializer(UserCreateSerializer):
             user.is_active = False
             user.save(update_fields=["is_active"])
         return user
+
+
+class ClientSerializer(serializers.ModelSerializer):
+    """A serializer class for the client model"""
+
+    class Meta:
+        model = Client
+        fields = '__all__'
