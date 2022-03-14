@@ -24,7 +24,6 @@ import '../../App.css';
 import { useNavigate } from 'react-router-dom';
 import { LogoutDialogue } from '../LogoutDialogue';
 import { ROLES } from '../../utils/roles';
-import { useAuthState } from '../../context';
 
 const handleRouteToDashboard = () => {
   const current_user = localStorage.getItem('userInfo')
@@ -125,16 +124,18 @@ const SideBarItem = props => {
         navigate(`${props.route}`);
       }}
     >
-      <props.icon boxSize={30} pl="20px" />
+      <props.icon pl="20px" />
       <Text>{props.item_name}</Text>
     </HStack>
   );
 };
 
 const Sidebar = () => {
-  const { userDetails } = useAuthState();
   const [current, setCurrent] = React.useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const userDetails = localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
+    : {};
 
   //logic to set active sidebar item
   React.useEffect(() => {
@@ -156,7 +157,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <Box width="15vw" h="100vh" overflowY={'scroll'} overflowX="hidden">
+      <Box width="15vw" h="100vh" overflowX="hidden">
         <Box pt="20px" width="15vw" h="100vh" bg="white">
           <Box mb="25px" alignItems="center" pl="15px">
             <Logo />

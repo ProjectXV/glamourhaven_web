@@ -1,0 +1,49 @@
+[
+  {
+    "id": 25,
+    "services": [
+      {
+        "id": 1,
+        "service_title": "Manicure",
+        "service_description": "This entails application of gel, taking care of cuticles and nail strength.",
+        "service_cost": 500.0,
+        "service_estimate_time": 60.0,
+        "service_main_image": "https://res.cloudinary.com/njeveh-cloud/image/upload/v1/media/images/commodities/manicure_uz7j1w",
+        "service_extra_image1": "https://res.cloudinary.com/njeveh-cloud/image/upload/v1/media/images/services/extra1.jpg",
+        "service_extra_image2": "https://res.cloudinary.com/njeveh-cloud/image/upload/v1/media/images/services/extra2.jpg"
+      },
+      {
+        "id": 2,
+        "service_title": "Braiding",
+        "service_description": "This could be anything ranging from box-braids to Ghanaian. They are also available at different sizes- small, medium, large each at different prices",
+        "service_cost": 1500.0,
+        "service_estimate_time": 180.0,
+        "service_main_image": "https://res.cloudinary.com/njeveh-cloud/image/upload/v1/media/images/commodities/braids_k4o6ki",
+        "service_extra_image1": "https://res.cloudinary.com/njeveh-cloud/image/upload/v1/media/images/services/extra1.jpg",
+        "service_extra_image2": "https://res.cloudinary.com/njeveh-cloud/image/upload/v1/media/images/services/extra2.jpg"
+      }
+    ],
+    "client": {
+      "id": 20,
+      "user": {
+        "username": "juliesau",
+        "email": "julienyange@gmail.com"
+      },
+      "phone_number": "0707262705",
+      "is_subscribed": true,
+      "profile_picture": null
+    },
+    "staff": {
+      "id": 2,
+      "first_name": "Robyn",
+      "last_name": "Fenty",
+      "phone_number": "0707070707",
+      "profile_picture": "https://res.cloudinary.com/njeveh-cloud/image/upload/v1/media/images/profile/rihanna_docbha",
+      "specialization": "Manicure"
+    },
+    "start_date": null,
+    "starting_time": "2015-06-28",
+    "end_time": "21:51:13",
+    "status": "confirmed"
+  }
+]
