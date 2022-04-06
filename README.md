@@ -28,7 +28,7 @@ A web application that aims at making booking of appointments to salons easier.
 - For detailed information on how to go about contributing to this project, refer to this [guide](docs/CONTRIBUTING.md) to get step by step instructions on how to clone and fork this repo in preparation for contributing
 - For detailed information on how to go about the design and style guide to this project. Check out the [Styling Guide](docs/STYLING.md)
 - For detailed information on the backend API endpoints, refer to this [documentation](docs/APIs.md)
-
+- This is the guide to how the UI Design should look. [Click this link to see the figma design](figma) 
 # Setting up the Frontend
 
 ## Environment Setup
