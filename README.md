@@ -140,7 +140,7 @@ instructions on how to run the backend server:
   pip install django
   ```
 
-(might say requirement satisfied)
+  (might say requirement satisfied)
 
 - while in the backend directory, run the following command to install all necessary packages
 
@@ -162,8 +162,8 @@ instructions on how to run the backend server:
 
 - next command will run the server
 
-```bash
- python manage.py runserver
-```
+  ```bash
+  python manage.py runserver
+  ```
 
 - You're all set and ready to code😁
