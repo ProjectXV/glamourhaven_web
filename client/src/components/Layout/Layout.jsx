@@ -2,9 +2,20 @@ import { Box, Flex, HStack } from '@chakra-ui/react';
 import React from 'react';
 import Sidebar from '../PageSections/Sidebar';
 import TopBar from '../PageSections/TopBar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const Layout = () => {
+  React.useEffect(() => {
+    const user = localStorage.getItem('userInfo').token
+      ? JSON.parse(localStorage.getItem('userInfo'))
+      : null;
+
+    if (user === null || undefined) {
+      const navigate = useNavigate();
+      navigate('/acount/login');
+    }
+  }, [third]);
+
   return (
     <HStack spacing={0} overflowX={'hidden'} overflowY={'hidden'}>
       <Sidebar />
