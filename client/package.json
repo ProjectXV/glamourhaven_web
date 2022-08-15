@@ -42,7 +42,7 @@
     "lint-staged": "^12.3.5",
     "prettier": "2.5.1",
     "redux-devtools": "^3.7.0",
-    "vite": "^2.8.0"
+    "vite": "^3.0.7"
   },
   "husky": {
     "hooks": {
